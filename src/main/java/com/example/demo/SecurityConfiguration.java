@@ -1,6 +1,6 @@
-package com.example.demo.security;
+package com.example.demo;
 
-import com.example.demo.repository.UserRepository;
+import com.example.demo.model.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -41,7 +41,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
         http
                 .authorizeRequests()
-                .antMatchers("/","/h2/**").permitAll()
+                .antMatchers("/","/h2-console/**","/register").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin().loginPage("/login").permitAll()

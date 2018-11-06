@@ -1,9 +1,9 @@
 package com.example.demo;
 
 import com.example.demo.model.Role;
+import com.example.demo.model.RoleRepository;
 import com.example.demo.model.User;
-import com.example.demo.repository.RoleRepository;
-import com.example.demo.repository.UserRepository;
+import com.example.demo.model.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.security.crypto.password.PasswordEncoder;

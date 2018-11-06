@@ -1,8 +1,8 @@
-package com.example.demo.security;
+package com.example.demo;
 
 import com.example.demo.model.Role;
 import com.example.demo.model.User;
-import com.example.demo.repository.UserRepository;
+import com.example.demo.model.UserRepository;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -33,10 +33,10 @@ public class SSUserDetailsService implements UserDetailsService {
                 return null;
             }
             System.out.println("User from Username " + appUser.toString());
-            return new org.springframework.security.core.userdetails.User(
-                    appUser.getUsername(),
-                    appUser.getPassword(),
-                    getAuthorities(appUser));
+
+           return new CustomUserDetails(appUser, getAuthorities(appUser));
+
+
 
         } catch (Exception e) {
             throw new UsernameNotFoundException("User Not Found ");
@@ -54,7 +54,7 @@ public class SSUserDetailsService implements UserDetailsService {
         System.out.println("User Authoriries are : " + authorities.toString());
         return authorities;
 
-
     }
+
 
 }
