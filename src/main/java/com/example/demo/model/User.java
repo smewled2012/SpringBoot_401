@@ -1,6 +1,5 @@
 package com.example.demo.model;
 
-import com.example.demo.model.Role;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import javax.persistence.*;
